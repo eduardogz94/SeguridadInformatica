@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="/media/eduardo/Eduardo/Workspace/Seguridad/SeguridadService/jars/tomcat-dbcp.jar"/>
+	<classpathentry kind="lib" path="/media/eduardo/Eduardo/Workspace/Seguridad/SeguridadService/jars/tomcat-embed-core.jar"/>
+	<classpathentry kind="lib" path="/media/eduardo/Eduardo/Workspace/Seguridad/SeguridadService/jars/tomcat-embed-el.jar"/>
+	<classpathentry kind="lib" path="/media/eduardo/Eduardo/Workspace/Seguridad/SeguridadService/jars/tomcat-embed-jasper.jar"/>
+	<classpathentry kind="lib" path="/media/eduardo/Eduardo/Workspace/Seguridad/SeguridadService/jars/tomcat-embed-logging-juli.jar"/>
+	<classpathentry kind="lib" path="/media/eduardo/Eduardo/Workspace/Seguridad/SeguridadService/jars/tomcat-embed-logging-log4j.jar"/>
+	<classpathentry kind="lib" path="/media/eduardo/Eduardo/Workspace/Seguridad/SeguridadService/jars/tomcat-embed-websocket.jar"/>
+	<classpathentry kind="lib" path="/media/eduardo/Eduardo/Workspace/Siva-Framework/jars/JSON/json-20171018.jar"/>
+	<classpathentry kind="lib" path="/home/eduardo/workspace/Siva-Framework/jars/postgresql/postgresql-42.1.4.jar"/>
+	<classpathentry kind="lib" path="/home/eduardo/workspace/Siva-Framework/jars/postgresql/postgresql-42.1.4.jre6.jar"/>
+	<classpathentry kind="lib" path="/home/eduardo/workspace/Siva-Framework/jars/postgresql/postgresql-42.1.4.jre7.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
