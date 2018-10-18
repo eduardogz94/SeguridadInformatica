@@ -1,0 +1,87 @@
+<ns1:deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java" xmlns:ns1="http://xml.apache.org/axis/wsdd/">
+ <ns1:globalConfiguration>
+  <ns1:parameter name="sendMultiRefs" value="true"/>
+  <ns1:parameter name="disablePrettyXML" value="true"/>
+  <ns1:parameter name="adminPassword" value="admin"/>
+  <ns1:parameter name="attachments.Directory" value="/home/eduardo/workspace/java/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/Database Service/WEB-INF/attachments"/>
+  <ns1:parameter name="dotNetSoapEncFix" value="true"/>
+  <ns1:parameter name="enableNamespacePrefixOptimization" value="false"/>
+  <ns1:parameter name="sendXMLDeclaration" value="true"/>
+  <ns1:parameter name="sendXsiTypes" value="true"/>
+  <ns1:parameter name="attachments.implementation" value="org.apache.axis.attachments.AttachmentsImpl"/>
+  <ns1:requestFlow>
+   <ns1:handler type="java:org.apache.axis.handlers.JWSHandler">
+    <ns1:parameter name="scope" value="session"/>
+   </ns1:handler>
+   <ns1:handler type="java:org.apache.axis.handlers.JWSHandler">
+    <ns1:parameter name="scope" value="request"/>
+    <ns1:parameter name="extension" value=".jwr"/>
+   </ns1:handler>
+  </ns1:requestFlow>
+ </ns1:globalConfiguration>
+ <ns1:handler name="URLMapper" type="java:org.apache.axis.handlers.http.URLMapper"/>
+ <ns1:handler name="Authenticate" type="java:org.apache.axis.handlers.SimpleAuthenticationHandler"/>
+ <ns1:handler name="LocalResponder" type="java:org.apache.axis.transport.local.LocalResponder"/>
+ <ns1:service name="AdminService" provider="java:MSG">
+  <ns1:parameter name="allowedMethods" value="AdminService"/>
+  <ns1:parameter name="enableRemoteAdmin" value="false"/>
+  <ns1:parameter name="className" value="org.apache.axis.utils.Admin"/>
+  <ns1:namespace>http://xml.apache.org/axis/wsdd/</ns1:namespace>
+ </ns1:service>
+ <ns1:service name="DatabaseManager" provider="java:RPC" style="wrapped" use="literal">
+  <ns2:operation name="testConnection" qname="ns1:testConnection" returnQName="ns1:testConnectionReturn" returnType="xsd:string" soapAction="" xmlns:ns1="http://service" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns2="http://xml.apache.org/axis/wsdd/"/>
+  <ns1:operation name="add" qname="ns2:add" returnQName="ns2:addReturn" returnType="xsd:int" soapAction="" xmlns:ns2="http://service" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns2:email" type="xsd:string"/>
+   <ns1:parameter qname="ns2:pass" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:operation name="show" qname="ns3:show" returnQName="ns3:showReturn" returnType="xsd:string" soapAction="" xmlns:ns3="http://service" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="user" qname="ns4:user" returnQName="ns4:userReturn" returnType="xsd:int" soapAction="" xmlns:ns4="http://service" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns4:email" type="xsd:string"/>
+   <ns1:parameter qname="ns4:pass" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:parameter name="allowedMethods" value="add testConnection show user"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
+  <ns1:parameter name="wsdlPortType" value="DatabaseManager"/>
+  <ns1:parameter name="className" value="service.DatabaseManager"/>
+  <ns1:parameter name="wsdlServicePort" value="DatabaseManager"/>
+  <ns1:parameter name="schemaQualified" value="http://service"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://service"/>
+  <ns1:parameter name="wsdlServiceElement" value="DatabaseManagerService"/>
+ </ns1:service>
+ <ns1:service name="Version" provider="java:RPC">
+  <ns1:parameter name="allowedMethods" value="getVersion"/>
+  <ns1:parameter name="className" value="org.apache.axis.Version"/>
+ </ns1:service>
+ <ns1:service name="Main" provider="java:RPC" style="wrapped" use="literal">
+  <ns1:operation name="main" qname="ns5:main" soapAction="" xmlns:ns5="http://org">
+   <ns1:parameter qname="ns5:args" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <ns1:fault class="org.apache.catalina.LifecycleException" qname="ns5:fault" type="ns6:LifecycleException" xmlns:ns6="http://catalina.apache.org"/>
+  </ns1:operation>
+  <ns1:parameter name="allowedMethods" value="main"/>
+  <ns1:parameter name="wsdlPortType" value="Main"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
+  <ns1:parameter name="schemaQualified" value="http://org,http://catalina.apache.org"/>
+  <ns1:parameter name="wsdlServicePort" value="Main"/>
+  <ns1:parameter name="className" value="org.Main"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://org"/>
+  <ns1:parameter name="wsdlServiceElement" value="MainService"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns7:LifecycleException" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:org.apache.catalina.LifecycleException" xmlns:ns7="http://catalina.apache.org"/>
+ </ns1:service>
+ <ns1:transport name="http">
+  <ns1:requestFlow>
+   <ns1:handler type="URLMapper"/>
+   <ns1:handler type="java:org.apache.axis.handlers.http.HTTPAuthHandler"/>
+  </ns1:requestFlow>
+  <ns1:parameter name="qs:list" value="org.apache.axis.transport.http.QSListHandler"/>
+  <ns1:parameter name="qs:wsdl" value="org.apache.axis.transport.http.QSWSDLHandler"/>
+  <ns1:parameter name="qs.list" value="org.apache.axis.transport.http.QSListHandler"/>
+  <ns1:parameter name="qs.method" value="org.apache.axis.transport.http.QSMethodHandler"/>
+  <ns1:parameter name="qs:method" value="org.apache.axis.transport.http.QSMethodHandler"/>
+  <ns1:parameter name="qs.wsdl" value="org.apache.axis.transport.http.QSWSDLHandler"/>
+ </ns1:transport>
+ <ns1:transport name="local">
+  <ns1:responseFlow>
+   <ns1:handler type="LocalResponder"/>
+  </ns1:responseFlow>
+ </ns1:transport>
+</ns1:deployment>

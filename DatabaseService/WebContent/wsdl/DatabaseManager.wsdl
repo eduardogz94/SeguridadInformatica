@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://service" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://service" xmlns:intf="http://service" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://service" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="testConnection">
+    <complexType/>
+   </element>
+   <element name="testConnectionResponse">
+    <complexType>
+     <sequence>
+      <element name="testConnectionReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="add">
+    <complexType>
+     <sequence>
+      <element name="email" type="xsd:string"/>
+      <element name="pass" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addResponse">
+    <complexType>
+     <sequence>
+      <element name="addReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="show">
+    <complexType/>
+   </element>
+   <element name="showResponse">
+    <complexType>
+     <sequence>
+      <element name="showReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="user">
+    <complexType>
+     <sequence>
+      <element name="email" type="xsd:string"/>
+      <element name="pass" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="userResponse">
+    <complexType>
+     <sequence>
+      <element name="userReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="addResponse">
+
+      <wsdl:part element="impl:addResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="userRequest">
+
+      <wsdl:part element="impl:user" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addRequest">
+
+      <wsdl:part element="impl:add" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="showRequest">
+
+      <wsdl:part element="impl:show" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="testConnectionRequest">
+
+      <wsdl:part element="impl:testConnection" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="showResponse">
+
+      <wsdl:part element="impl:showResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="testConnectionResponse">
+
+      <wsdl:part element="impl:testConnectionResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="userResponse">
+
+      <wsdl:part element="impl:userResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="DatabaseManager">
+
+      <wsdl:operation name="testConnection">
+
+         <wsdl:input message="impl:testConnectionRequest" name="testConnectionRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:testConnectionResponse" name="testConnectionResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="add">
+
+         <wsdl:input message="impl:addRequest" name="addRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:addResponse" name="addResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="show">
+
+         <wsdl:input message="impl:showRequest" name="showRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:showResponse" name="showResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="user">
+
+         <wsdl:input message="impl:userRequest" name="userRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:userResponse" name="userResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="DatabaseManagerSoapBinding" type="impl:DatabaseManager">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="testConnection">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="testConnectionRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="testConnectionResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="add">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="addRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="addResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="show">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="showRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="showResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="user">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="userRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="userResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="DatabaseManagerService">
+
+      <wsdl:port binding="impl:DatabaseManagerSoapBinding" name="DatabaseManager">
+
+         <wsdlsoap:address location="http://localhost:8080/Database_Service/services/DatabaseManager"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
