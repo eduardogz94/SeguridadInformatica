@@ -8,14 +8,13 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="lib" path="/media/eduardo/Eduardo/Workspace/Seguridad/DatabaseService/jars/tomcat-embed/tomcat-dbcp.jar"/>
-	<classpathentry kind="lib" path="/media/eduardo/Eduardo/Workspace/Seguridad/DatabaseService/jars/tomcat-embed/tomcat-embed-core.jar"/>
-	<classpathentry kind="lib" path="/media/eduardo/Eduardo/Workspace/Seguridad/DatabaseService/jars/tomcat-embed/tomcat-embed-el.jar"/>
-	<classpathentry kind="lib" path="/media/eduardo/Eduardo/Workspace/Seguridad/DatabaseService/jars/tomcat-embed/tomcat-embed-jasper.jar"/>
-	<classpathentry kind="lib" path="/media/eduardo/Eduardo/Workspace/Seguridad/DatabaseService/jars/tomcat-embed/tomcat-embed-logging-juli.jar"/>
-	<classpathentry kind="lib" path="/media/eduardo/Eduardo/Workspace/Seguridad/DatabaseService/jars/tomcat-embed/tomcat-embed-logging-log4j.jar"/>
-	<classpathentry kind="lib" path="/media/eduardo/Eduardo/Workspace/Seguridad/DatabaseService/jars/tomcat-embed/tomcat-embed-websocket.jar"/>
-	<classpathentry kind="lib" path="/media/eduardo/Eduardo/Workspace/Seguridad/DatabaseServiceServlet/jars/JSON/json-simple-1.1.jar"/>
 	<classpathentry kind="lib" path="/media/eduardo/Eduardo/Workspace/Siva-Framework/jars/JSON/json-20171018.jar"/>
+	<classpathentry kind="lib" path="/media/eduardo/Eduardo/Workspace/Siva-Framework/jars/tomcat-embed/tomcat-dbcp.jar"/>
+	<classpathentry kind="lib" path="/media/eduardo/Eduardo/Workspace/Siva-Framework/jars/tomcat-embed/tomcat-embed-core.jar"/>
+	<classpathentry kind="lib" path="/media/eduardo/Eduardo/Workspace/Siva-Framework/jars/tomcat-embed/tomcat-embed-el.jar"/>
+	<classpathentry kind="lib" path="/media/eduardo/Eduardo/Workspace/Siva-Framework/jars/tomcat-embed/tomcat-embed-jasper.jar"/>
+	<classpathentry kind="lib" path="/media/eduardo/Eduardo/Workspace/Siva-Framework/jars/tomcat-embed/tomcat-embed-logging-juli.jar"/>
+	<classpathentry kind="lib" path="/media/eduardo/Eduardo/Workspace/Siva-Framework/jars/tomcat-embed/tomcat-embed-logging-log4j.jar"/>
+	<classpathentry kind="lib" path="/media/eduardo/Eduardo/Workspace/Siva-Framework/jars/tomcat-embed/tomcat-embed-websocket.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

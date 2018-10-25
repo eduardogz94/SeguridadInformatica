@@ -1,0 +1,9 @@
+.classpath
+.project
+.tern-project
+/.settings/
+/build/
+/tomcat.8080/
+/bin/
+/WebContent/META-INF
+/WebContent/WEB-INF
