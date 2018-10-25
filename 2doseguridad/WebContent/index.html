@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <style>	
+	#wrapper {
+   text-align: center;
+}
+#maindiv {
+    display: inline-block,
+	border: 1px solid black !important }
+</style>
+        <script src = libs\jquery\jquery-3.3.1.js></script>
+    </head>
+    <body>
+	<div id="wrapper">
+	<div id="maindiv" style="border: 5px solid black">
+        <form enctype="multipart/form-data" id="formuploadajax" method="post">
+            <h3>Cifrado asimetrico:</h3>
+            Archivo cifrado: <input type="file" name="aca" id="aca" /><br>
+            Clave privada: <input type="file" name="cpa" id="cpa" /><br>
+            Clave publica de la firma: <input type="file" name="cpfa" id="cpfa" /><br>
+            Firma del archivo cifrado: <input type="file" name="faca" id="faca" /><br>
+            <br><h3>Cifrado simetrico:</h3>
+            Archivo cifrado: <input type="file" name="acs" id="acs" /><br>
+            Clave publica de la firma: <input type="file" name="cpfs" id="cpfs" /><br>
+            Firma del archivo cifrado: <input type="file" name="facs" id="facs" /><br>
+<br>
+            <input type="submit" value="Subir archivos"/>
+	<br><br>
+        </form>
+        <div id="mensaje"></div>
+</div>
+</div>
+        <script src = js\js2.js></script>
+    </body>
+</html>    
